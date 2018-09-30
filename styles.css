@@ -1,0 +1,61 @@
+
+body{
+	overflow: hidden;
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+#score{
+	color:white;
+	font-size:20;
+	position:absolute;
+	top:1em;
+	left:1em;
+	transition:all 1s;
+}
+#hero{
+	position:absolute;
+	background-color: #88d8d2;
+	width:20px;
+	height:20px;
+	border:1px solid orange;
+	border-radius: .9em;
+	transition:opacity 1s;
+}
+#background{
+	position:absolute;
+	border:20px #888 solid;
+	width:460px;
+	height:460px;
+	background-color: #333;
+	top:0;
+	left:0;
+}
+#laser{
+	border-radius: 1px;
+	position:absolute;
+	width:3px;
+	height:10px;
+	background-color: #32fc05;
+	box-shadow: 0 0 7px 2px #67fc76;
+}
+#gameOver{
+	color:red;
+	font-size: 2em;
+	position:absolute;
+	top:200px;
+	left:140px;
+	display: none;
+}
+#gameOver:hover{
+	cursor: pointer;
+}
+.enemy{
+	background-color: #fc9b46;
+	width:30px;
+	height:30px;
+	position: absolute;
+	border-radius:.6em;
+	transform:rotate(45deg);
+
+}
