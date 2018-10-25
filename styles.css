@@ -38,6 +38,7 @@ body{
 	height:10px;
 	background-color: #32fc05;
 	box-shadow: 0 0 7px 2px #67fc76;
+	animation: tick .2s linear 0s infinite;
 }
 #gameOver{
 	color:red;
@@ -57,5 +58,12 @@ body{
 	position: absolute;
 	border-radius:.6em;
 	transform:rotate(45deg);
+}
 
+@keyframes tick {
+	0%{transform:scale(1.2);}
+	25%{transform:scale(0.4);}
+	50%{transform:scale(1.2);}
+	75%{transform:scale(0.3);}
+	100%{transform:scale(1.2);}
 }
