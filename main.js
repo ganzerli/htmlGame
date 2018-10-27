@@ -5,7 +5,7 @@ const DOWN_KEY = 40;
 const UP_KEY = 38;
 const SPACE_KEY =32;
 let heroMovement = 2;
-let laserSpeed = 3;
+let laserSpeed = 5;
 let enemysSpeed =1;
 let enemysArray = new Array();
 let score=0;
@@ -147,7 +147,7 @@ function getRandom(maxSize){
 
 // if the random number between 0 and 99 is 0 make an enemy.will be called every loop, in this case we have an enemy every given calculated time
 function addEnemy(){
-	if (getRandom(200) == 99){
+	if (getRandom(80) == 52){
 	let enemyName ='enemy'+ getRandom(10000000); //very unique id
 	let enemy = createObject(enemyName,getRandom(450),-40,30,30);
 	
