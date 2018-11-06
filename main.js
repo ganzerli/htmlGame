@@ -4,8 +4,8 @@ const RIGHT_KEY = 39;
 const DOWN_KEY = 40;
 const UP_KEY = 38;
 const SPACE_KEY =32;
-let heroMovement = 2;
-let laserSpeed = 5;
+let heroMovement = 1;
+let laserSpeed = 3;
 let enemysSpeed =1;
 let enemysArray = new Array();
 let score=0;
@@ -113,7 +113,7 @@ function gameOver(){
 			document.getElementById(hero.element).style.transition='none';
 			document.getElementById(hero.element).style.opacity=0;
 			document.getElementById(laser.element).style.opacity=0;
-			document.getElementById('gameOver').style.display='block';
+			document.getElementById('gameOver').style.opacity=1;
 			document.getElementById('score').style.left='9em';
 			document.getElementById('score').style.top='8em';
 			enemysSpeed=-3;
@@ -147,14 +147,14 @@ function getRandom(maxSize){
 
 // if the random number between 0 and 99 is 0 make an enemy.will be called every loop, in this case we have an enemy every given calculated time
 function addEnemy(){
-	if (getRandom(80) == 52){
+	if (getRandom(200) == 99){
 	let enemyName ='enemy'+ getRandom(10000000); //very unique id
 	let enemy = createObject(enemyName,getRandom(450),-40,30,30);
 	
 	var element = document.createElement('div');// <----
 	element.id= enemy.element;
-	element.className = 'enemy';
-	document.children[0].appendChild(element);//    <----
+	element.className = 'enemy offset';
+	document.querySelector('.container').appendChild(element);//    <----
 	//appends the children (div) just created to the 0th child of the document, HTML.
 	enemysArray.push(enemy);
 	}
@@ -163,7 +163,7 @@ function addEnemy(){
 function reset(){
 			hit = false;
 			document.getElementById(laser.element).style.opacity=1;
-			document.getElementById('gameOver').style.display='none';
+			document.getElementById('gameOver').style.opacity=0;
 			document.getElementById('score').style.left='1em';
 			document.getElementById('score').style.top='1em';
 			score = 0;
