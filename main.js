@@ -102,7 +102,7 @@ function checkCollision() {
     } else if (findOverflow(hero, enemysArray[i])) {
       gameOver();
     } else if (enemysArray[i].y > 500) {
-      // if one is ver the bottom/screen
+      // if one is over the bottom/screen or a specific distance from top
       let foundElement = document.getElementById(enemysArray[i].element);
       foundElement.style.opacity = 0;
       foundElement.parentNode.removeChild(foundElement);
@@ -181,6 +181,7 @@ function reset() {
   document.getElementById("score").style.left = "1em";
   document.getElementById("score").style.top = "1em";
   score = 0;
+  power = 0;
   enemysArray.splice(0, enemysArray.length);
   enemysSpeed = 1;
   hero.x = 250;
